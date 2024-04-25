@@ -3,18 +3,18 @@
 }
 
 .Title {
-  background-color: #222427;
+  background-color: #fcfcfc;
   min-height: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: left;
   font-size: calc(10px + 1vmin);
-  color: white;
+  color: rgb(14, 122, 211);
 }
 
 .Listing {
-  background-color: #222427;
+  background-color:#df4d4d;
   min-height: 8vh;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,12 @@
   justify-content: left;
   font-size: calc(10px + 1vmin);
   color: white;
+  margin: 20px;
+}
+
+.ListedItems {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .App-link {
