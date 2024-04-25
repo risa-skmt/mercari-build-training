@@ -100,6 +100,16 @@ func addItem(c echo.Context) error {
 	}
 	defer db.Close()
 
+	// categoryテーブルに存在してなかった時の書きたい
+	// result, err := db.Query("SELECT EXISTS(SELECT * FROM category WHERE name = ?)", category)
+	// log.Print(category, result)
+    // if err != nil{
+	// 	_, err = db.Exec("INSERT INTO category name VALUES ?", category)
+	// 	if err != nil{
+	// 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error())
+	// 	}
+	// }
+
 	stmt, err := db.Prepare("INSERT INTO items (name, category_id, image_name) VALUES (?,(SELECT id FROM category WHERE name = ?),?)")
 	if err != nil {
 		log.Print("INSERTクエリ失敗")
